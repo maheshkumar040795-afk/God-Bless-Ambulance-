@@ -624,10 +624,11 @@ def build():
         src = src[:a] + home_loc + "\n" + src[b:]
     src = src.replace('<button type="button" class="loc-btn-solid" onclick="gbOpenAll()">View All Hospital Locations</button>',
                       '<a class="loc-btn-solid" href="/locations/#hospitals">View All Hospital Locations</a>')
-    if 'href="/locations/">Locations</a>' not in src:
-        src = src.replace('<a href="#services">Services</a>\n', '<a href="#services">Services</a>\n<a href="/locations/">Locations</a>\n', 1)
-        src = src.replace('<a href="#services" onclick="toggleMobileNav()">Services</a>\n',
-                          '<a href="#services" onclick="toggleMobileNav()">Services</a>\n  <a href="/locations/">Locations</a>\n', 1)
+    # add "Locations" after "Services" in every menu (the page has two desktop navs and one mobile nav)
+    src = src.replace('<a href="#services">Services</a>\n<a href="#equipment">',
+                      '<a href="#services">Services</a>\n<a href="/locations/">Locations</a>\n<a href="#equipment">')
+    src = src.replace('<a href="#services" onclick="toggleMobileNav()">Services</a>\n  <a href="#equipment"',
+                      '<a href="#services" onclick="toggleMobileNav()">Services</a>\n  <a href="/locations/">Locations</a>\n  <a href="#equipment"')
     with open(os.path.join(ROOT, "index.html"), "w", encoding="utf-8") as f:
         f.write(src)
     print("area pages:", sum(len(d) for _, _, d in regions), "hospital pages:", len(hosp), "sitemap urls:", len(urls))
