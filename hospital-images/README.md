@@ -16,6 +16,7 @@ Upload a photo into this folder (`hospital-images/`) with the **exact file name*
 | A.G. Diabetes & Multi Speciality Centre | `a-g-diabetes-and-multi-speciality-centre.jpg` |
 | A.N. Multispeciality Hospital | `a-n-multispeciality-hospital.jpg` |
 | A4 Bhanu Hospital Maternity Centre | `a4-bhanu-hospital-maternity-centre.jpg` |
+| A4 Hospital Birthing Centre | `a4-hospital-birthing-centre.jpg` |
 | Aadhuram Hospitals | `aadhuram-hospitals.jpg` |
 | AADIV Fertility Centre and Hospital | `aadiv-fertility-centre-and-hospital.jpg` |
 | Aakash Hospital | `aakash-hospital.jpg` |
@@ -23,6 +24,7 @@ Upload a photo into this folder (`hospital-images/`) with the **exact file name*
 | Aakash Hospital Maduravoyal | `aakash-hospital-maduravoyal.jpg` |
 | Aakash Hospital Minjur | `aakash-hospital-minjur.jpg` |
 | Aakash Multispeciality Hospital | `aakash-multispeciality-hospital.jpg` |
+| Aaric Medical Center | `aaric-medical-center.jpg` |
 | Aarush Herbal Hospitals | `aarush-herbal-hospitals.jpg` |
 | Aashara Hospitals | `aashara-hospitals.jpg` |
 | Aathvi Hospital | `aathvi-hospital.jpg` |
@@ -30,6 +32,7 @@ Upload a photo into this folder (`hospital-images/`) with the **exact file name*
 | Abirami Hospital | `abirami-hospital.jpg` |
 | Abishek Hospital 24 Hours | `abishek-hospital-24-hours.jpg` |
 | Acme Med | `acme-med.jpg` |
+| ACS Medical College and Hospital | `acs-medical-college-and-hospital.jpg` |
 | Adama Hospital | `adama-hospital.jpg` |
 | Aditya Kamaraja Hospital | `aditya-kamaraja-hospital.jpg` |
 | Adyar Cancer Institute | `adyar-cancer-institute.jpg` |
@@ -42,6 +45,7 @@ Upload a photo into this folder (`hospital-images/`) with the **exact file name*
 | AK Clinic | `ak-clinic.jpg` |
 | AK Multispeciality Healthcare | `ak-multispeciality-healthcare.jpg` |
 | Akira Psychiatric Hospital | `akira-psychiatric-hospital.jpg` |
+| Al Kurshid Hospital | `al-kurshid-hospital.jpg` |
 | Alandur UCHC | `alandur-uchc.jpg` |
 | All Is Well Hospital | `all-is-well-hospital.jpg` |
 | Alpha Hospital | `alpha-hospital.jpg` |
@@ -63,6 +67,7 @@ Upload a photo into this folder (`hospital-images/`) with the **exact file name*
 | Annai Multi Speciality Hospital | `annai-multi-speciality-hospital.jpg` |
 | Annai Theresa Hospital | `annai-theresa-hospital.jpg` |
 | Annai Theresa Hospital Mogappair | `annai-theresa-hospital-mogappair.jpg` |
+| Annai Theresa Hospital Selaiyur | `annai-theresa-hospital-selaiyur.jpg` |
 | Annapurna Health Centre | `annapurna-health-centre.jpg` |
 | Anugraha Hospital | `anugraha-hospital.jpg` |
 | Apaxis Hospital (A Unit of Kumaran Groups) | `apaxis-hospital-a-unit-of-kumaran-groups.jpg` |
@@ -93,6 +98,7 @@ Upload a photo into this folder (`hospital-images/`) with the **exact file name*
 | Apple Plus Hospital | `apple-plus-hospital.jpg` |
 | Arakkonam Government General Hospital | `arakkonam-government-general-hospital.jpg` |
 | Arakkonam Primary Health Center | `arakkonam-primary-health-center.jpg` |
+| Aravind Eye Hospital - Chennai | `aravind-eye-hospital-chennai.jpg` |
 | Arignar Anna Govt Hospital of Indian Medicine | `arignar-anna-govt-hospital-of-indian-medicine.jpg` |
 | Ark Hospital | `ark-hospital.jpg` |
 | Arokya Hospital | `arokya-hospital.jpg` |
@@ -145,6 +151,7 @@ Upload a photo into this folder (`hospital-images/`) with the **exact file name*
 | BM Hospital | `bm-hospital.jpg` |
 | BN Sankara Hospital | `bn-sankara-hospital.jpg` |
 | Boga Holistic Hospital | `boga-holistic-hospital.jpg` |
+| Bora Hospital | `bora-hospital.jpg` |
 | BP Jain Hospital | `bp-jain-hospital.jpg` |
 | BRS Hospital | `brs-hospital.jpg` |
 | BSS Hospital | `bss-hospital.jpg` |
@@ -233,6 +240,7 @@ Upload a photo into this folder (`hospital-images/`) with the **exact file name*
 | Doctor Rex's Hospitals | `doctor-rex-s-hospitals.jpg` |
 | DPS Hospital | `dps-hospital.jpg` |
 | Dr A C Aruldas Hospital | `dr-a-c-aruldas-hospital.jpg` |
+| DR BM Hospital | `dr-bm-hospital.jpg` |
 | Dr Gupta's Hospital | `dr-gupta-s-hospital.jpg` |
 | Dr Kamakshi Memorial Multispecialty Centre | `dr-kamakshi-memorial-multispecialty-centre.jpg` |
 | Dr Kumar's Healthcare | `dr-kumar-s-healthcare.jpg` |
@@ -242,6 +250,7 @@ Upload a photo into this folder (`hospital-images/`) with the **exact file name*
 | Dr V Balaji Diabetes Care and Research Institute | `dr-v-balaji-diabetes-care-and-research-institute.jpg` |
 | Dr. A. Ramachandran's Diabetes Hospitals | `dr-a-ramachandran-s-diabetes-hospitals.jpg` |
 | Dr. Agarwal's Eye Hospital - Sholinganallur | `dr-agarwal-s-eye-hospital-sholinganallur.jpg` |
+| Dr. Bala Lakshmi Hospital | `dr-bala-lakshmi-hospital.jpg` |
 | Dr. H. Yogish Hospital | `dr-h-yogish-hospital.jpg` |
 | Dr. Humayun Speciality Hospital | `dr-humayun-speciality-hospital.jpg` |
 | Dr. Jayam Memorial Hospital | `dr-jayam-memorial-hospital.jpg` |
@@ -272,12 +281,13 @@ Upload a photo into this folder (`hospital-images/`) with the **exact file name*
 | El-Rapha Life Care Hospital | `el-rapha-life-care-hospital.jpg` |
 | Ennore Primary Hospital | `ennore-primary-hospital.jpg` |
 | Eranavoor Corporation Health Post | `eranavoor-corporation-health-post.jpg` |
-| Esha Hospitals | `esha-hospitals.jpg` |
 | ESHA Hospitals | `esha-hospitals.jpg` |
+| Esha Hospitals | `esha-hospitals.jpg` |
 | ESI Dispensary Athipattu | `esi-dispensary-athipattu.jpg` |
 | ESI Hospital - Ayanavaram | `esi-hospital-ayanavaram.jpg` |
 | ESI Hospital - Perambur | `esi-hospital-perambur.jpg` |
 | ESI Hospital Minjur | `esi-hospital-minjur.jpg` |
+| ESI Hospital Red Hills | `esi-hospital-red-hills.jpg` |
 | ESIC Hospital Arakkonam | `esic-hospital-arakkonam.jpg` |
 | ESIC Hospital Gummidipoondi | `esic-hospital-gummidipoondi.jpg` |
 | ESIC Hospital K.K. Nagar | `esic-hospital-k-k-nagar.jpg` |
@@ -321,7 +331,9 @@ Upload a photo into this folder (`hospital-images/`) with the **exact file name*
 | Good News Health Centre Pammal | `good-news-health-centre-pammal.jpg` |
 | Government Hospital Mahabalipuram | `government-hospital-mahabalipuram.jpg` |
 | Government Hospital Padi UHC | `government-hospital-padi-uhc.jpg` |
+| Government Hospital Poonamallee | `government-hospital-poonamallee.jpg` |
 | Government Hospital Pulicat | `government-hospital-pulicat.jpg` |
+| Government Hospital Saidapet | `government-hospital-saidapet.jpg` |
 | Government Hospital, Alandur | `government-hospital-alandur.jpg` |
 | Government Hospital, Avadi | `government-hospital-avadi.jpg` |
 | Government Hospital, Injambakkam | `government-hospital-injambakkam.jpg` |
@@ -369,6 +381,7 @@ Upload a photo into this folder (`hospital-images/`) with the **exact file name*
 | HIRSH Nursing Home | `hirsh-nursing-home.jpg` |
 | HMC Hospital | `hmc-hospital.jpg` |
 | Holistic Hospital | `holistic-hospital.jpg` |
+| Hope Hospital Poonamallee | `hope-hospital-poonamallee.jpg` |
 | Hope Life Hospitals | `hope-life-hospitals.jpg` |
 | Hope Medical Centre | `hope-medical-centre.jpg` |
 | Hopewell Hospital | `hopewell-hospital.jpg` |
@@ -389,6 +402,8 @@ Upload a photo into this folder (`hospital-images/`) with the **exact file name*
 | IRED Hospital | `ired-hospital.jpg` |
 | Iswarya Hospital - OMR | `iswarya-hospital-omr.jpg` |
 | Iyyappa Hospitals | `iyyappa-hospitals.jpg` |
+| Jain Hospital Puzhal | `jain-hospital-puzhal.jpg` |
+| Jain Hospital Saidapet | `jain-hospital-saidapet.jpg` |
 | Jananam Hospital | `jananam-hospital.jpg` |
 | Janani Hospital | `janani-hospital.jpg` |
 | JASS Hospital Kolathur | `jass-hospital-kolathur.jpg` |
@@ -399,6 +414,7 @@ Upload a photo into this folder (`hospital-images/`) with the **exact file name*
 | JE Nesam Hospital | `je-nesam-hospital.jpg` |
 | Jeevan Hospital Day Care Polyclinic | `jeevan-hospital-day-care-polyclinic.jpg` |
 | Jeevan Sumyuktha Hospitals | `jeevan-sumyuktha-hospitals.jpg` |
+| Jeyam Multi Speciality Hospitals | `jeyam-multi-speciality-hospitals.jpg` |
 | JIP Diabetic Multi-speciality Hospital | `jip-diabetic-multi-speciality-hospital.jpg` |
 | JIP Multi Speciality Hospital | `jip-multi-speciality-hospital.jpg` |
 | JISHA Hospital | `jisha-hospital.jpg` |
@@ -421,6 +437,7 @@ Upload a photo into this folder (`hospital-images/`) with the **exact file name*
 | K.M. Speciality Hospital | `k-m-speciality-hospital.jpg` |
 | K.P. Hospital | `k-p-hospital.jpg` |
 | Kalaignar Centenary Super Speciality Hospital (KCSSH) | `kalaignar-centenary-super-speciality-hospital-kcssh.jpg` |
+| Kalaivani Hospital | `kalaivani-hospital.jpg` |
 | Kamachi University Hospital | `kamachi-university-hospital.jpg` |
 | Kamala Hospital - Peravallur | `kamala-hospital-peravallur.jpg` |
 | Kamarajar Free Hospital | `kamarajar-free-hospital.jpg` |
@@ -454,12 +471,14 @@ Upload a photo into this folder (`hospital-images/`) with the **exact file name*
 | KHM Medical Center | `khm-medical-center.jpg` |
 | KM Hospital Vyasarpadi | `km-hospital-vyasarpadi.jpg` |
 | KMC Hospital | `kmc-hospital.jpg` |
+| KMS Health Centre | `kms-health-centre.jpg` |
 | Kodungaiyur UPHC Corporation Hospital | `kodungaiyur-uphc-corporation-hospital.jpg` |
 | Kolapakkam 24 Hrs Poly Clinic | `kolapakkam-24-hrs-poly-clinic.jpg` |
 | Korattur UPHC | `korattur-uphc.jpg` |
 | KPP Multispeciality Hospital | `kpp-multispeciality-hospital.jpg` |
 | KR Hospital | `kr-hospital.jpg` |
 | Krishna Hospital Singaperumal Koil | `krishna-hospital-singaperumal-koil.jpg` |
+| KS Multispeciality Hospital | `ks-multispeciality-hospital.jpg` |
 | KTS Nursing Home | `kts-nursing-home.jpg` |
 | Kumar Hospital Otteri | `kumar-hospital-otteri.jpg` |
 | Kumaran Hospital Kilpauk | `kumaran-hospital-kilpauk.jpg` |
@@ -503,6 +522,7 @@ Upload a photo into this folder (`hospital-images/`) with the **exact file name*
 | Madhu Hospital | `madhu-hospital.jpg` |
 | Madras Medical Mission Hospital | `madras-medical-mission-hospital.jpg` |
 | Madras Port Trust Hospital | `madras-port-trust-hospital.jpg` |
+| Mahalakshmi Clinic 24 Hours | `mahalakshmi-clinic-24-hours.jpg` |
 | Mahalakshmi Hospital | `mahalakshmi-hospital.jpg` |
 | Mahalakshmi Multispeciality Hospital | `mahalakshmi-multispeciality-hospital.jpg` |
 | Mahalaxmi Multi Speciality Hospital | `mahalaxmi-multi-speciality-hospital.jpg` |
@@ -511,6 +531,7 @@ Upload a photo into this folder (`hospital-images/`) with the **exact file name*
 | Manali Health Post | `manali-health-post.jpg` |
 | Mangadu Primary Health Centre | `mangadu-primary-health-centre.jpg` |
 | Mangalam Hospital | `mangalam-hospital.jpg` |
+| Mani's Hospital | `mani-s-hospital.jpg` |
 | Manitham 24x7 Multi-speciality Hospital | `manitham-24x7-multi-speciality-hospital.jpg` |
 | Maya Nursing Home | `maya-nursing-home.jpg` |
 | Medway Hospitals | `medway-hospitals.jpg` |
@@ -545,6 +566,7 @@ Upload a photo into this folder (`hospital-images/`) with the **exact file name*
 | Motherhood Hospital - Alwarpet | `motherhood-hospital-alwarpet.jpg` |
 | Mount Multispeciality Hospitals | `mount-multispeciality-hospitals.jpg` |
 | Mount SuperSpecialty Hospital | `mount-superspecialty-hospital.jpg` |
+| Mukunth Health Care | `mukunth-health-care.jpg` |
 | Mullai Medical Centre | `mullai-medical-centre.jpg` |
 | Murari Hospital | `murari-hospital.jpg` |
 | Murthuzaviya Charitable Hospital | `murthuzaviya-charitable-hospital.jpg` |
@@ -573,6 +595,7 @@ Upload a photo into this folder (`hospital-images/`) with the **exact file name*
 | Neolife Hospital | `neolife-hospital.jpg` |
 | Nesapakkam Corporation UPHC | `nesapakkam-corporation-uphc.jpg` |
 | Nethra Multispeciality Hospital | `nethra-multispeciality-hospital.jpg` |
+| Neuro Hospital Pudupet | `neuro-hospital-pudupet.jpg` |
 | Neuro Life Hospital | `neuro-life-hospital.jpg` |
 | New Century Hospital | `new-century-hospital.jpg` |
 | New Hope Medical Centre | `new-hope-medical-centre.jpg` |
@@ -601,9 +624,11 @@ Upload a photo into this folder (`hospital-images/`) with the **exact file name*
 | OneHealth Super Speciality Hospital | `onehealth-super-speciality-hospital.jpg` |
 | Orient Medical Center | `orient-medical-center.jpg` |
 | Oxford Hospitals | `oxford-hospitals.jpg` |
+| Oxymed Hospital | `oxymed-hospital.jpg` |
 | P S R Hospital (Heartcare and Mind Care) | `p-s-r-hospital-heartcare-and-mind-care.jpg` |
 | P.M.S. Hospital | `p-m-s-hospital.jpg` |
 | Padhuvai Hospital | `padhuvai-hospital.jpg` |
+| Palani Balaji Fertility Center and Women Hospital | `palani-balaji-fertility-center-and-women-hospital.jpg` |
 | Palaniappa Hospital | `palaniappa-hospital.jpg` |
 | Pallava Hospital | `pallava-hospital.jpg` |
 | Panimalar Hospital | `panimalar-hospital.jpg` |
@@ -618,6 +643,7 @@ Upload a photo into this folder (`hospital-images/`) with the **exact file name*
 | PCMC Hospital | `pcmc-hospital.jpg` |
 | People Welfare Hospital | `people-welfare-hospital.jpg` |
 | Periyar Government Hospital, Periyar Nagar | `periyar-government-hospital-periyar-nagar.jpg` |
+| Periyar Maniammai Hospital | `periyar-maniammai-hospital.jpg` |
 | Pettai 24 Hours Hospital | `pettai-24-hours-hospital.jpg` |
 | PG Women & Child Clinic | `pg-women-and-child-clinic.jpg` |
 | PH Government Hospital, Madhavaram | `ph-government-hospital-madhavaram.jpg` |
@@ -625,6 +651,7 @@ Upload a photo into this folder (`hospital-images/`) with the **exact file name*
 | PM Hospital Adyar | `pm-hospital-adyar.jpg` |
 | PonMalligai Hospitals | `ponmalligai-hospitals.jpg` |
 | Pooja Maternity Clinic | `pooja-maternity-clinic.jpg` |
+| Poonamallee 24x7 Hospital | `poonamallee-24x7-hospital.jpg` |
 | Porur Bristol Ortho Hospital | `porur-bristol-ortho-hospital.jpg` |
 | Pradeep Nursing Home | `pradeep-nursing-home.jpg` |
 | Praja Hospital | `praja-hospital.jpg` |
@@ -644,8 +671,11 @@ Upload a photo into this folder (`hospital-images/`) with the **exact file name*
 | Prime Care Nursing Home | `prime-care-nursing-home.jpg` |
 | Prime Indian Hospital | `prime-indian-hospital.jpg` |
 | Prithvika 24 Hrs Hospital | `prithvika-24-hrs-hospital.jpg` |
+| Prolife Maternity & Fertility Hospital | `prolife-maternity-and-fertility-hospital.jpg` |
 | Promed Hospital | `promed-hospital.jpg` |
+| Pulianthope 24 Hours Hospital | `pulianthope-24-hours-hospital.jpg` |
 | Punerjeni Ayurveda Marma Hospital | `punerjeni-ayurveda-marma-hospital.jpg` |
+| Puzhal Primary Health Center | `puzhal-primary-health-center.jpg` |
 | Raadha Rajendran Hospital | `raadha-rajendran-hospital.jpg` |
 | Raagaa Hospital | `raagaa-hospital.jpg` |
 | Raghavi Hospital | `raghavi-hospital.jpg` |
@@ -660,23 +690,29 @@ Upload a photo into this folder (`hospital-images/`) with the **exact file name*
 | Rajam Nursing Home | `rajam-nursing-home.jpg` |
 | Rajiv Gandhi Government General Hospital | `rajiv-gandhi-government-general-hospital.jpg` |
 | Rajkumar 24 Hours Hospital | `rajkumar-24-hours-hospital.jpg` |
+| Raju Hospitals | `raju-hospitals.jpg` |
 | Rakki Hospital | `rakki-hospital.jpg` |
 | Rakshith Hospital | `rakshith-hospital.jpg` |
+| Ram Narayanan Hospital | `ram-narayanan-hospital.jpg` |
 | Ramaiah Hospital | `ramaiah-hospital.jpg` |
 | Raman Hospital | `raman-hospital.jpg` |
+| Ramdas Hospital | `ramdas-hospital.jpg` |
 | Ramdev Hospital | `ramdev-hospital.jpg` |
 | Rasi Hospital | `rasi-hospital.jpg` |
 | Rathimed Speciality Hospital | `rathimed-speciality-hospital.jpg` |
 | Rathna Nursing Home | `rathna-nursing-home.jpg` |
 | Ravina Hospital | `ravina-hospital.jpg` |
+| Refresh Hospital | `refresh-hospital.jpg` |
 | Regen Institute of Orthopaedics (R.I.O) | `regen-institute-of-orthopaedics-r-i-o.jpg` |
 | Regional Institute of Ophthalmology & Govt Ophthalmic Hospital | `regional-institute-of-ophthalmology-and-govt-ophthalmic-hospital.jpg` |
 | Rela Clinic | `rela-clinic.jpg` |
 | Rela Hospital | `rela-hospital.jpg` |
+| RelaMS Hospital | `relams-hospital.jpg` |
 | Remedy Hospital | `remedy-hospital.jpg` |
 | RG Stone Urology & Laparoscopy Hospital | `rg-stone-urology-and-laparoscopy-hospital.jpg` |
 | RGL Poly Clinic | `rgl-poly-clinic.jpg` |
 | Rivive Hospital | `rivive-hospital.jpg` |
+| RK Hospital Pulianthope | `rk-hospital-pulianthope.jpg` |
 | RK Speciality Hospital | `rk-speciality-hospital.jpg` |
 | RKB Hospitals | `rkb-hospitals.jpg` |
 | RKK Medical Centre | `rkk-medical-centre.jpg` |
@@ -694,9 +730,12 @@ Upload a photo into this folder (`hospital-images/`) with the **exact file name*
 | RR Hospital | `rr-hospital.jpg` |
 | RS Hospital | `rs-hospital.jpg` |
 | RSR Trinity Acute Care Hospital | `rsr-trinity-acute-care-hospital.jpg` |
+| RTG Hospital | `rtg-hospital.jpg` |
+| Ruby Hospital | `ruby-hospital.jpg` |
 | S. S. Hospital | `s-s-hospital.jpg` |
 | S.A. Poly Clinic | `s-a-poly-clinic.jpg` |
 | S.M Hospital | `s-m-hospital.jpg` |
+| S.R Medical Centre | `s-r-medical-centre.jpg` |
 | S.S Speciality Clinic | `s-s-speciality-clinic.jpg` |
 | SA Hospital | `sa-hospital.jpg` |
 | Sai Bhavani Health Center | `sai-bhavani-health-center.jpg` |
@@ -705,10 +744,12 @@ Upload a photo into this folder (`hospital-images/`) with the **exact file name*
 | Sai Nursing Home and Maternity Hospital | `sai-nursing-home-and-maternity-hospital.jpg` |
 | Sai Santhosh Multi Speciality Hospital | `sai-santhosh-multi-speciality-hospital.jpg` |
 | Sai Speed Hospitals | `sai-speed-hospitals.jpg` |
+| Saidapet UPHC | `saidapet-uphc.jpg` |
 | Sakthi Clinic | `sakthi-clinic.jpg` |
 | Sakthi Hospital | `sakthi-hospital.jpg` |
 | Sakthi Hospital Ayanavaram | `sakthi-hospital-ayanavaram.jpg` |
 | Sakthi Hospital Triplicane | `sakthi-hospital-triplicane.jpg` |
+| Sakthi Sai Health Care | `sakthi-sai-health-care.jpg` |
 | Sam Hospital | `sam-hospital.jpg` |
 | Sangam Bone & Joint Hospital | `sangam-bone-and-joint-hospital.jpg` |
 | Sankara Eye Hospital | `sankara-eye-hospital.jpg` |
@@ -716,11 +757,14 @@ Upload a photo into this folder (`hospital-images/`) with the **exact file name*
 | Santhi Hospital Neelankarai | `santhi-hospital-neelankarai.jpg` |
 | Santosh Hospitals | `santosh-hospitals.jpg` |
 | Santosham Chest Hospital | `santosham-chest-hospital.jpg` |
+| Saradha Hospital | `saradha-hospital.jpg` |
 | Saraswathi Hospital | `saraswathi-hospital.jpg` |
 | Saraswathi Hospital Ennore | `saraswathi-hospital-ennore.jpg` |
 | Saraswathy Hospital Chromepet | `saraswathy-hospital-chromepet.jpg` |
+| Saravana Hospital | `saravana-hospital.jpg` |
 | Sathiya Multispeciality Hospital | `sathiya-multispeciality-hospital.jpg` |
 | Sayee Hospitals | `sayee-hospitals.jpg` |
+| SBS Hospital | `sbs-hospital.jpg` |
 | Sen Hospital | `sen-hospital.jpg` |
 | Senthil Priya Multi Speciality Hospital | `senthil-priya-multi-speciality-hospital.jpg` |
 | Serene Life Hospital | `serene-life-hospital.jpg` |
@@ -728,15 +772,20 @@ Upload a photo into this folder (`hospital-images/`) with the **exact file name*
 | Shaarave Hospital | `shaarave-hospital.jpg` |
 | Shadithya Hospital | `shadithya-hospital.jpg` |
 | Shakuntala Devi Maternity Hospital | `shakuntala-devi-maternity-hospital.jpg` |
+| Shali Day & Night Hospital | `shali-day-and-night-hospital.jpg` |
 | Shalini Nursing Home | `shalini-nursing-home.jpg` |
+| Shalom Medical Centre | `shalom-medical-centre.jpg` |
 | Shanmugam Multispeciality Hospital | `shanmugam-multispeciality-hospital.jpg` |
+| Shanthi General Hospital | `shanthi-general-hospital.jpg` |
 | Shanthi Hospital | `shanthi-hospital.jpg` |
 | Shashtik Multispeciality Hospital | `shashtik-multispeciality-hospital.jpg` |
 | Shens Speciality Hospital | `shens-speciality-hospital.jpg` |
 | Shepherd Nursing Home | `shepherd-nursing-home.jpg` |
 | Shifa Hospital | `shifa-hospital.jpg` |
+| Shifa Multi-speciality Clinic | `shifa-multi-speciality-clinic.jpg` |
 | Shivasunder Hospital, Adyar | `shivasunder-hospital-adyar.jpg` |
 | Shree Lakshmi Hospital | `shree-lakshmi-hospital.jpg` |
+| Shri Vaari Medical Centre | `shri-vaari-medical-centre.jpg` |
 | Shri Vignesh Hospital | `shri-vignesh-hospital.jpg` |
 | Shri Vilvam Hospital | `shri-vilvam-hospital.jpg` |
 | Sidharam Multi Speciality Clinic | `sidharam-multi-speciality-clinic.jpg` |
@@ -756,6 +805,7 @@ Upload a photo into this folder (`hospital-images/`) with the **exact file name*
 | Smriti Speciality Klinics | `smriti-speciality-klinics.jpg` |
 | SN Hospital | `sn-hospital.jpg` |
 | SN Hospital Madipakkam | `sn-hospital-madipakkam.jpg` |
+| Sooriya Hospital | `sooriya-hospital.jpg` |
 | Sooriya Speciality Center | `sooriya-speciality-center.jpg` |
 | Soul Hospital | `soul-hospital.jpg` |
 | Soundarapandian Bone and Joint Hospital | `soundarapandian-bone-and-joint-hospital.jpg` |
@@ -813,6 +863,7 @@ Upload a photo into this folder (`hospital-images/`) with the **exact file name*
 | Sri Tanishq Nakshatra Hospitals | `sri-tanishq-nakshatra-hospitals.jpg` |
 | Sri Venkateshwara Hospital | `sri-venkateshwara-hospital.jpg` |
 | Sri Venkateswara Hospitals | `sri-venkateswara-hospitals.jpg` |
+| Sri Venkateswaraa Medcity | `sri-venkateswaraa-medcity.jpg` |
 | Sri Vishal Health Care | `sri-vishal-health-care.jpg` |
 | Sri Vivekananda Hospitals | `sri-vivekananda-hospitals.jpg` |
 | Sringeri Sharada Equitas Hospital | `sringeri-sharada-equitas-hospital.jpg` |
@@ -822,6 +873,8 @@ Upload a photo into this folder (`hospital-images/`) with the **exact file name*
 | SRM Global Hospitals | `srm-global-hospitals.jpg` |
 | SRM Medical College Hospital and Research Centre | `srm-medical-college-hospital-and-research-centre.jpg` |
 | SRM Prime Hospital, Ramapuram | `srm-prime-hospital-ramapuram.jpg` |
+| Srushti Fertility Centre & Women's Hospital | `srushti-fertility-centre-and-women-s-hospital.jpg` |
+| Srushti Hospital | `srushti-hospital.jpg` |
 | SS Eye Hospital | `ss-eye-hospital.jpg` |
 | SS Hospital Kottivakkam | `ss-hospital-kottivakkam.jpg` |
 | SS Multispeciality Clinic | `ss-multispeciality-clinic.jpg` |
@@ -865,10 +918,12 @@ Upload a photo into this folder (`hospital-images/`) with the **exact file name*
 | Surya Diabetes Thyroid and Geriatric Care | `surya-diabetes-thyroid-and-geriatric-care.jpg` |
 | Sushrutha Surgical Hospital | `sushrutha-surgical-hospital.jpg` |
 | SUSI Hospital | `susi-hospital.jpg` |
+| SV Specialty Health Care | `sv-specialty-health-care.jpg` |
 | Swaram Hospital | `swaram-hospital.jpg` |
 | Swasi Naturo Cure Hospital | `swasi-naturo-cure-hospital.jpg` |
 | Swasthik Health Care | `swasthik-health-care.jpg` |
 | Swetha Ishwarya Hospitals | `swetha-ishwarya-hospitals.jpg` |
+| T.B. Hospital Pulianthope | `t-b-hospital-pulianthope.jpg` |
 | Taj Hospital | `taj-hospital.jpg` |
 | Tambaram Medical Center | `tambaram-medical-center.jpg` |
 | Tambaram Medical Center Phase II | `tambaram-medical-center-phase-ii.jpg` |
@@ -889,26 +944,33 @@ Upload a photo into this folder (`hospital-images/`) with the **exact file name*
 | Unittas Hospital | `unittas-hospital.jpg` |
 | Unittas Hospital OMR | `unittas-hospital-omr.jpg` |
 | Upgraded Government Primary Health Centre, Minjur | `upgraded-government-primary-health-centre-minjur.jpg` |
+| UPHC Ramapuram | `uphc-ramapuram.jpg` |
 | Urban Community Health Centre - Puzhal | `urban-community-health-centre-puzhal.jpg` |
 | Urban Health Wellness Centre, Injambakkam | `urban-health-wellness-centre-injambakkam.jpg` |
 | Urban Primary Health Care Centre, Tambaram | `urban-primary-health-care-centre-tambaram.jpg` |
 | Urban Primary Health Center, Besant Nagar | `urban-primary-health-center-besant-nagar.jpg` |
 | Urban Primary Health Center, Mugalivakkam | `urban-primary-health-center-mugalivakkam.jpg` |
 | Urban Primary Health Center, Pazhavanthangal | `urban-primary-health-center-pazhavanthangal.jpg` |
+| Urban Primary Health Centre - Poonamallee | `urban-primary-health-centre-poonamallee.jpg` |
 | Usha Hospital | `usha-hospital.jpg` |
 | Uthandi Urban Health & Wellness Centre | `uthandi-urban-health-and-wellness-centre.jpg` |
 | V Cure Hospital | `v-cure-hospital.jpg` |
 | V.S. Hospital | `v-s-hospital.jpg` |
 | V3 Ayush Multispeciality Hospital | `v3-ayush-multispeciality-hospital.jpg` |
+| Vadapalani Multi Speciality Hospital | `vadapalani-multi-speciality-hospital.jpg` |
 | Vaiyamalai Hospital | `vaiyamalai-hospital.jpg` |
 | Valarcare Hospital | `valarcare-hospital.jpg` |
+| Vanaja Hospital | `vanaja-hospital.jpg` |
 | Vanavil Medical Centre | `vanavil-medical-centre.jpg` |
 | Vandana Hospital | `vandana-hospital.jpg` |
+| Vani Hospital | `vani-hospital.jpg` |
 | Varamm Healthcare Multispecialty Hospital | `varamm-healthcare-multispecialty-hospital.jpg` |
 | Vasan Eye Care Hospital Chromepet | `vasan-eye-care-hospital-chromepet.jpg` |
 | Vasan Eye Care Hospital Korukkupet | `vasan-eye-care-hospital-korukkupet.jpg` |
 | Vasan Eye Care Hospital Neelankarai | `vasan-eye-care-hospital-neelankarai.jpg` |
+| Vasan Eye Care Hospital Saidapet | `vasan-eye-care-hospital-saidapet.jpg` |
 | Vasantha Hospital | `vasantha-hospital.jpg` |
+| Vasanthi Hospital | `vasanthi-hospital.jpg` |
 | Vasanthi Orthopaedic Hospital | `vasanthi-orthopaedic-hospital.jpg` |
 | VayuShri Hospitals | `vayushri-hospitals.jpg` |
 | Vel Multi-speciality Clinic | `vel-multi-speciality-clinic.jpg` |
@@ -928,8 +990,10 @@ Upload a photo into this folder (`hospital-images/`) with the **exact file name*
 | Vinayaga Hospital | `vinayaga-hospital.jpg` |
 | Vinita Hospital | `vinita-hospital.jpg` |
 | Virutcham Hospital | `virutcham-hospital.jpg` |
+| Vish Hospital | `vish-hospital.jpg` |
 | Vivekanandan Hospital | `vivekanandan-hospital.jpg` |
 | VK Nursing Home 2 | `vk-nursing-home-2.jpg` |
+| VM Hospital | `vm-hospital.jpg` |
 | VMS Hospital | `vms-hospital.jpg` |
 | VP Medical Centre | `vp-medical-centre.jpg` |
 | VRSI Multi Speciality Hospital | `vrsi-multi-speciality-hospital.jpg` |
