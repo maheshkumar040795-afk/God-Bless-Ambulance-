@@ -201,6 +201,219 @@ def map_block(query, label):
             % (esc(label), esc(src), esc(link)))
 
 
+# ---------------------------------------------------------------- locations
+ZONES = ["Thiruvottiyur", "Manali", "Madhavaram", "Tondiarpet", "Royapuram", "Thiru-Vi-Ka Nagar", "Ambattur", "Anna Nagar",
+         "Teynampet", "Kodambakkam", "Valasaravakkam", "Alandur", "Adyar", "Perungudi", "Sholinganallur"]
+HOT = ["Velachery", "Porur", "OMR", "ECR", "Tambaram", "Chromepet", "Pallavaram", "Medavakkam", "Perumbakkam", "Guindy",
+       "Nungambakkam", "Mylapore"]
+TOP_TN = ["Coimbatore", "Madurai", "Trichy", "Salem", "Tirunelveli", "Vellore", "Erode", "Tiruppur", "Thanjavur", "Hosur"]
+
+PIN = ('<svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 '
+       '7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>')
+CROSS = ('<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 '
+         '0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/></svg>')
+
+HOME_LOC_CSS = """
+#locations{position:relative;overflow:hidden;background:radial-gradient(1200px 500px at 85% -10%,rgba(229,62,62,.28),transparent 60%),radial-gradient(900px 500px at -10% 110%,rgba(229,62,62,.18),transparent 60%),linear-gradient(160deg,#0f172a 0%,#1a2340 55%,#111827 100%);padding:96px 0;color:#e2e8f0}
+#locations .section-header h2{color:#fff}#locations .section-header p{color:#a0aec0}
+.gbl-wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+.gbl-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:-18px 0 34px}
+.gbl-stat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:18px 16px;text-align:center;backdrop-filter:blur(6px)}
+.gbl-stat b{display:block;font-family:"Oswald",sans-serif;font-size:34px;line-height:1.1;color:#fff}.gbl-stat span{font-size:12.5px;letter-spacing:.5px;color:#a0aec0;text-transform:uppercase;font-weight:700}
+.gbl-panels{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.gbl-panel{background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:24px}
+.gbl-panel h3{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:0 0 6px;font-family:"Oswald",sans-serif;font-size:22px;color:#fff;font-weight:600}
+.gbl-panel h3 small{font-family:"Inter",sans-serif;font-size:11px;font-weight:800;letter-spacing:1.5px;color:#fc8181;background:rgba(229,62,62,.15);border:1px solid rgba(229,62,62,.35);padding:4px 10px;border-radius:999px}
+.gbl-panel p{margin:0 0 16px;font-size:14px;color:#a0aec0}
+.gbl-chips{display:flex;flex-wrap:wrap;gap:8px}
+.gbl-chip{display:inline-flex;align-items:center;gap:6px;font-family:"Inter",sans-serif;font-size:13px;font-weight:600;color:#e2e8f0;text-decoration:none;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:8px 14px;transition:all .2s}
+.gbl-chip svg{color:#fc8181}.gbl-chip:hover{background:#e53e3e;border-color:#e53e3e;color:#fff;transform:translateY(-1px)}.gbl-chip:hover svg{color:#fff}
+.gbl-more{margin-top:14px;font-size:13px;font-weight:700;color:#fc8181;text-decoration:none;display:inline-block}.gbl-more:hover{color:#fff}
+.gbl-cta{text-align:center;margin-top:34px}
+.gbl-btn{display:inline-flex;align-items:center;gap:10px;font-family:"Inter",sans-serif;font-weight:800;font-size:15px;color:#fff;text-decoration:none;background:linear-gradient(135deg,#e53e3e,#a52317);padding:15px 30px;border-radius:999px;box-shadow:0 12px 30px rgba(229,62,62,.35);transition:transform .2s,box-shadow .2s}
+.gbl-btn:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(229,62,62,.45)}
+#hospitals{background:#fff}
+#hospitals .hosp-grid{max-width:1100px;grid-template-columns:repeat(4,1fr);gap:16px}
+#hospitals .hosp-card{flex-direction:column;align-items:stretch;gap:0;padding:0;overflow:hidden;background:#fff;border:1px solid #edf2f7;border-radius:16px;box-shadow:0 6px 24px rgba(15,23,42,.06)}
+#hospitals .hosp-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(15,23,42,.14);border-color:#fed7d7}
+#hospitals .hosp-ico{width:100%;min-width:0;height:150px;border-radius:0}
+#hospitals .hosp-ico svg{width:34px;height:34px}
+#hospitals .hosp-txt{padding:14px 16px 16px;position:relative}
+#hospitals .hosp-txt strong{font-size:15px}
+#hospitals .hosp-txt small{display:flex;align-items:center;gap:4px}
+#hospitals .hosp-txt small::before{content:"";width:6px;height:6px;border-radius:50%;background:#38a169;box-shadow:0 0 0 3px rgba(56,161,105,.18)}
+@media(max-width:900px){.gbl-stats{grid-template-columns:repeat(2,1fr)}.gbl-panels{grid-template-columns:1fr}#hospitals .hosp-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){#locations{padding:70px 0}.gbl-stat b{font-size:28px}#hospitals .hosp-grid{grid-template-columns:1fr 1fr;gap:10px}#hospitals .hosp-ico{height:110px}#hospitals .hosp-txt{padding:10px 12px 12px}#hospitals .hosp-txt strong{font-size:13.5px}}
+"""
+
+
+def build_locations(src, chennai, tn, area_url, by_area, hosp, photo_url):
+    n_hosp = len(hosp)
+    hosp_round = "%d+" % (n_hosp // 100 * 100)
+    cnt = lambda rdir, a: len(by_area.get((rdir, a), []))
+
+    def home_chip(rdir, a):
+        return ('<a class="gbl-chip" href="%s" onclick="gbOpenArea(\'%s\');return false;">%s%s</a>'
+                % (area_url[(rdir, a)], a.replace("'", "\\'"), PIN, esc(a)))
+
+    chen_chips = "".join(home_chip("chennai", a) for a in HOT + ZONES[:6] if ("chennai", a) in area_url)
+    tn_chips = "".join(home_chip("tamil-nadu", a) for a in TOP_TN if ("tamil-nadu", a) in area_url)
+    home = f"""<!--GB-LOC--><style>{HOME_LOC_CSS}</style>
+<section id="locations">
+<div class="section-header reveal"><span class="section-eyebrow">Where We Serve</span><h2>Serving Chennai &amp; All of Tamil Nadu</h2><p>Ambulances on standby across every Chennai zone and every district headquarters in Tamil Nadu &mdash; tap your area to see the hospitals near you.</p></div>
+<div class="gbl-wrap">
+<div class="gbl-stats reveal"><div class="gbl-stat"><b>{len(chennai)}</b><span>Chennai areas</span></div><div class="gbl-stat"><b>{len(tn)}</b><span>Tamil Nadu cities</span></div><div class="gbl-stat"><b>{hosp_round}</b><span>Hospitals covered</span></div><div class="gbl-stat"><b>24/7</b><span>Dispatch</span></div></div>
+<div class="gbl-panels">
+<div class="gbl-panel reveal"><h3>Chennai <small>{len(chennai)} AREAS</small></h3><p>Most-requested pickup areas across North, Central and South Chennai.</p><div class="gbl-chips">{chen_chips}</div><a class="gbl-more" href="/locations/#chennai">See all {len(chennai)} Chennai areas &rarr;</a></div>
+<div class="gbl-panel reveal"><h3>Tamil Nadu <small>{len(tn)} CITIES</small></h3><p>Long-distance, ICU and hospital-to-hospital transfers to every major city.</p><div class="gbl-chips">{tn_chips}</div><a class="gbl-more" href="/locations/#tamil-nadu">See all {len(tn)} cities &rarr;</a></div>
+</div>
+<div class="gbl-cta reveal"><a class="gbl-btn" href="/locations/">Explore All Locations &rarr;</a></div>
+</div>
+</section><!--/GB-LOC-->"""
+
+    # ---------- /locations/ page
+    def top_names(rdir, a, k=3):
+        hs = sorted(by_area.get((rdir, a), []), key=lambda h: (not photo_url(h["name"]), h["home"] != a, h["name"]))
+        return [h["name"] for h in hs[:k]]
+
+    def card(rdir, a, badge=""):
+        tops = top_names(rdir, a)
+        q = (a + " " + " ".join(h["name"] for h in by_area.get((rdir, a), []))).lower()
+        return ('<a class="lc" href="%s" data-q="%s"><span class="lc-h"><span class="lc-pin">%s</span><b>%s</b>%s</span>'
+                '<span class="lc-n">%d hospitals</span><span class="lc-t">%s</span><span class="lc-go">View hospitals &rarr;</span></a>'
+                % (area_url[(rdir, a)], esc(q), PIN, esc(a), ('<i>%s</i>' % badge) if badge else "", cnt(rdir, a),
+                   esc(" · ".join(tops))))
+
+    zones = "".join(card("chennai", a, "Zone") for a in ZONES if ("chennai", a) in area_url)
+    hot = "".join(card("chennai", a, "High demand") for a in HOT if ("chennai", a) in area_url)
+    letters = {}
+    for a in sorted(chennai):
+        letters.setdefault(a[0].upper(), []).append(a)
+    az_nav = "".join('<a href="#az-%s">%s</a>' % (L, L) for L in letters)
+    az = "".join('<div class="az" id="az-%s" data-grp><h4>%s</h4><div class="az-list">%s</div></div>' % (
+        L, L, "".join('<a href="%s" data-q="%s">%s<small>%d</small></a>' % (
+            area_url[("chennai", a)], esc((a + " " + " ".join(h["name"] for h in by_area.get(("chennai", a), []))).lower()),
+            esc(a), cnt("chennai", a)) for a in lst)) for L, lst in letters.items())
+    tn_cards = "".join(card("tamil-nadu", a, "Top city" if a in TOP_TN[:6] else "") for a in sorted(tn, key=lambda c: (c not in TOP_TN, TOP_TN.index(c) if c in TOP_TN else 0, c)))
+    extra = "".join(card("chennai", a, "Chennai belt") for a in ("Chengalpattu", "Tiruvallur") if ("chennai", a) in area_url)
+
+    # major hospitals = the home page Hospital Coverage list
+    by_name = {}
+    for h in hosp.values():
+        by_name.setdefault(h["name"], h)
+    majors = re.findall(r"gbOpenHosp\('((?:[^'\\]|\\.)*)','((?:[^'\\]|\\.)*)','((?:[^'\\]|\\.)*)'\)",
+                        src[src.index('<section id="hospitals">'):])
+    mh = ""
+    for n, addr, area in majors[:12]:
+        n = n.replace("\\'", "'")
+        h = by_name.get(n) or next((x for x in hosp.values() if x["name"].lower().startswith(n.split(",")[0].lower())), None)
+        link = h["url"] if h else area_url.get(("chennai", area), "/chennai/")
+        ph = photo_url(n)
+        img = ('<img src="%s" alt="%s" loading="lazy" width="320" height="200" onerror="this.remove()">' % (esc(ph), esc(n))) if ph else ""
+        short, _, loc = n.partition(",")
+        mh += ('<a class="mh" href="%s" data-q="%s"><span class="mh-ph">%s%s</span><span class="mh-b"><b>%s</b><small>%s%s</small></span></a>'
+               % (esc(link), esc((n + " " + area).lower()), CROSS, img, esc(short), PIN, esc((loc or area).strip())))
+
+    css = """*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:#2d3748;background:#f7fafc;line-height:1.6}
+a{color:inherit}h1,h2,h3,h4{font-family:"Oswald","Inter",sans-serif;letter-spacing:.2px}
+.top{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid #edf2f7}
+.top .in{max-width:1180px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;gap:18px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:#1a2340;font-weight:800;font-size:15px;letter-spacing:.5px;margin-right:auto}.brand small{display:block;color:#c0392b;font-size:10px;letter-spacing:2px}
+.top nav{display:flex;gap:22px}.top nav a{text-decoration:none;font-weight:700;font-size:14px;color:#4a5568}.top nav a.on,.top nav a:hover{color:#c0392b}
+.call{display:inline-flex;align-items:center;gap:6px;text-decoration:none;background:linear-gradient(135deg,#e53e3e,#a52317);color:#fff;font-weight:800;font-size:14px;padding:10px 18px;border-radius:999px;box-shadow:0 8px 20px rgba(229,62,62,.3)}
+.hero{position:relative;overflow:hidden;color:#fff;background:radial-gradient(900px 420px at 90% -20%,rgba(229,62,62,.35),transparent 60%),radial-gradient(700px 400px at -10% 120%,rgba(229,62,62,.2),transparent 60%),linear-gradient(160deg,#0f172a,#1a2340 60%,#111827);padding:64px 20px 90px}
+.hero .in{max-width:1180px;margin:0 auto}
+.eb{display:inline-block;font-size:11px;font-weight:800;letter-spacing:3px;color:#fc8181;text-transform:uppercase;margin-bottom:10px}
+.hero h1{font-size:clamp(32px,5vw,54px);line-height:1.1;margin:0 0 14px}.hero h1 em{font-style:normal;color:#fc8181}
+.hero p{max-width:640px;color:#cbd5e0;font-size:16.5px;margin:0 0 26px}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;max-width:760px}
+.st{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);border-radius:14px;padding:14px}.st b{display:block;font-family:"Oswald",sans-serif;font-size:30px;line-height:1.1}.st span{font-size:11.5px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:#a0aec0}
+.search{max-width:1180px;margin:-34px auto 0;padding:0 20px;position:relative;z-index:5}
+.search .box{display:flex;align-items:center;gap:12px;background:#fff;border-radius:18px;padding:8px 8px 8px 20px;box-shadow:0 20px 50px rgba(15,23,42,.18);border:1px solid #edf2f7}
+.search input{flex:1;border:0;outline:0;font:inherit;font-size:16px;padding:12px 0;min-width:0}
+.tabs{display:flex;gap:6px;flex-wrap:wrap}.tabs a{text-decoration:none;font-weight:800;font-size:13px;padding:10px 14px;border-radius:12px;color:#4a5568;background:#f7fafc}.tabs a:hover{background:#fff5f5;color:#c0392b}
+main{max-width:1180px;margin:0 auto;padding:36px 20px 20px}
+.sec{margin-bottom:46px;scroll-margin-top:80px}
+.sh{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:18px;flex-wrap:wrap}
+.sh h2{font-size:clamp(24px,3vw,34px);margin:0;color:#1a2340;line-height:1.15}.sh p{margin:4px 0 0;color:#718096;font-size:14.5px}
+.pill{font-size:11px;font-weight:800;letter-spacing:1.5px;color:#c0392b;background:#fff5f5;border:1px solid #fed7d7;padding:5px 12px;border-radius:999px;text-transform:uppercase}
+h3.sub{font-size:19px;color:#1a2340;margin:26px 0 12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+.lc{position:relative;display:flex;flex-direction:column;gap:6px;text-decoration:none;background:#fff;border:1px solid #edf2f7;border-radius:16px;padding:16px 16px 14px;box-shadow:0 4px 18px rgba(15,23,42,.05);transition:transform .2s,box-shadow .2s,border-color .2s}
+.lc:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(15,23,42,.12);border-color:#fed7d7}
+.lc-h{display:flex;align-items:center;gap:8px}.lc-h b{font-size:16.5px;color:#1a2340}
+.lc-pin{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:9px;background:linear-gradient(135deg,#e53e3e,#a52317);color:#fff;flex:none}
+.lc-h i{margin-left:auto;font-style:normal;font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:#c0392b;background:#fff5f5;padding:3px 8px;border-radius:999px;white-space:nowrap}
+.lc-n{font-size:13px;font-weight:800;color:#38a169}
+.lc-t{font-size:13px;color:#718096;line-height:1.45;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:38px}
+.lc-go{font-size:13px;font-weight:800;color:#c0392b;margin-top:2px}
+.aznav{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}.aznav a{text-decoration:none;font-weight:800;font-size:13px;width:34px;height:34px;display:inline-flex;align-items:center;justify-content:center;border-radius:10px;background:#fff;border:1px solid #edf2f7;color:#1a2340}.aznav a:hover{background:#c0392b;color:#fff}
+.azwrap{background:#fff;border:1px solid #edf2f7;border-radius:18px;padding:8px 20px 18px;columns:3 260px;column-gap:28px}
+.az{break-inside:avoid;padding-top:12px;scroll-margin-top:90px}.az h4{margin:0 0 6px;font-size:18px;color:#c0392b;border-bottom:1px solid #fed7d7;padding-bottom:2px}
+.az-list a{display:flex;justify-content:space-between;gap:10px;text-decoration:none;padding:5px 2px;font-size:14.5px;color:#2d3748;border-bottom:1px dashed #edf2f7}.az-list a:hover{color:#c0392b}
+.az-list small{font-weight:800;color:#a0aec0;font-size:12px}
+.mgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.mh{display:flex;flex-direction:column;text-decoration:none;background:#fff;border:1px solid #edf2f7;border-radius:16px;overflow:hidden;box-shadow:0 4px 18px rgba(15,23,42,.05);transition:transform .2s,box-shadow .2s}.mh:hover{transform:translateY(-3px);box-shadow:0 16px 36px rgba(15,23,42,.12)}
+.mh-ph{position:relative;height:150px;background:linear-gradient(135deg,#e53e3e,#a52317);color:#fff;display:flex;align-items:center;justify-content:center}.mh-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.mh-b{padding:12px 14px 14px}.mh-b b{display:block;color:#1a2340;font-size:15px}.mh-b small{display:flex;align-items:center;gap:4px;color:#718096;font-size:13px}.mh-b small svg{color:#c0392b}
+.band{margin:10px 0 40px;border-radius:22px;padding:30px;color:#fff;background:linear-gradient(135deg,#c0392b,#7b1d12);display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;box-shadow:0 20px 50px rgba(192,57,43,.3)}
+.band h2{margin:0 0 4px;font-size:28px}.band p{margin:0;opacity:.9}.band .acts{display:flex;gap:10px;flex-wrap:wrap}
+.band a{text-decoration:none;font-weight:800;padding:13px 22px;border-radius:999px;background:#fff;color:#c0392b}.band a.wa{background:#25d366;color:#fff}
+.none{display:none;text-align:center;color:#718096;padding:30px;background:#fff;border-radius:16px;border:1px dashed #cbd5e0}
+footer{background:#0f172a;color:#a0aec0;padding:30px 20px 100px;font-size:14px}footer .in{max-width:1180px;margin:0 auto}footer a{color:#fff}
+.bar{position:fixed;left:0;right:0;bottom:0;display:flex;gap:8px;padding:10px;background:#fff;border-top:1px solid #e2e8f0;z-index:30}.bar a{flex:1;text-align:center;text-decoration:none;font-weight:800;padding:12px;border-radius:999px;color:#fff;background:#c0392b}.bar a.wa{background:#25d366}
+.hide{display:none!important}
+@media(max-width:900px){.top nav{display:none}.mgrid{grid-template-columns:repeat(2,1fr)}.stats{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:900px){.bar{display:none}footer{padding-bottom:30px}}
+@media(max-width:520px){.hero{padding:44px 18px 80px}.search .box{flex-wrap:wrap;padding:10px 12px}.tabs{width:100%}.tabs a{flex:1;text-align:center;padding:9px 6px}.mh-ph{height:110px}.azwrap{padding:4px 14px 14px}}
+"""
+    js = """<script>(function(){var i=document.getElementById('q');if(!i)return;var items=[].slice.call(document.querySelectorAll('[data-q]')),grps=[].slice.call(document.querySelectorAll('[data-grp]')),secs=[].slice.call(document.querySelectorAll('[data-sec]')),none=document.getElementById('none');
+i.addEventListener('input',function(){var q=i.value.toLowerCase().trim(),any=false;items.forEach(function(e){var ok=!q||e.getAttribute('data-q').indexOf(q)>=0;e.classList.toggle('hide',!ok);if(ok&&q)any=true;});
+grps.forEach(function(g){g.classList.toggle('hide',!!q&&!g.querySelector('[data-q]:not(.hide)'));});secs.forEach(function(s){s.classList.toggle('hide',!!q&&!s.querySelector('[data-q]:not(.hide)'));});none.style.display=q&&!any?'block':'none';});})();</script>"""
+    crumbs = [("Home", "/"), ("Locations", None)]
+    title = "Ambulance Service Locations in Chennai & Tamil Nadu | God Bless Ambulance"
+    desc = ("God Bless Ambulance serves %d Chennai areas and %d Tamil Nadu cities, covering %s hospitals. 24/7 ICU, ALS and BLS ambulances. Call %s."
+            % (len(chennai), len(tn), hosp_round, PHONE_DISPLAY))
+    ld = [crumb_ld(crumbs), {"@context": "https://schema.org", "@type": "EmergencyService", "name": "God Bless Ambulance Service",
+                              "url": SITE + "/", "telephone": "+91-" + PHONE,
+                              "areaServed": [{"@type": "City", "name": "Chennai"}] + [{"@type": "City", "name": c} for c in sorted(tn)]}]
+    lds = "".join('<script type="application/ld+json">%s</script>' % json.dumps(x, ensure_ascii=False, separators=(",", ":")) for x in ld)
+    page_html = f"""<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{esc(title)}</title><meta name="description" content="{esc(desc)}"><link rel="canonical" href="{SITE}/locations/">
+<meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(desc)}"><meta property="og:url" content="{SITE}/locations/">
+<meta name="theme-color" content="#0f172a"><link rel="icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+<style>{css}</style>{lds}</head><body>
+<header class="top"><div class="in"><a class="brand" href="/">{LOGO}<span>GOD BLESS AMBULANCE<small>24/7 SERVICE</small></span></a>
+<nav><a href="/">Home</a><a href="/#services">Services</a><a class="on" href="/locations/">Locations</a><a href="/#contact">Contact</a></nav>
+<a class="call" href="tel:{PHONE}">&#128222; {PHONE_DISPLAY}</a></div></header>
+<section class="hero"><div class="in"><span class="eb">Where we serve</span><h1>Ambulance Service Across <em>Chennai</em> &amp; <em>Tamil Nadu</em></h1>
+<p>ICU, ALS, BLS and freezer box ambulances on standby 24/7. Find your area or city to see the hospitals we cover, then call once &mdash; we send the nearest available ambulance.</p>
+<div class="stats"><div class="st"><b>{len(chennai)}</b><span>Chennai areas</span></div><div class="st"><b>{len(tn)}</b><span>TN cities</span></div><div class="st"><b>{hosp_round}</b><span>Hospitals</span></div><div class="st"><b>24/7</b><span>Dispatch</span></div></div></div></section>
+<div class="search"><div class="box"><span aria-hidden="true">&#128269;</span><input id="q" type="search" placeholder="Search area, city or hospital (e.g. Porur, Madurai, Apollo)" aria-label="Search locations">
+<div class="tabs"><a href="#chennai">Chennai</a><a href="#tamil-nadu">Tamil Nadu</a><a href="#hospitals">Hospitals</a></div></div></div>
+<main>
+<p class="none" id="none">No area or hospital matches your search. Call {PHONE_DISPLAY} &mdash; we cover all of Chennai and Tamil Nadu.</p>
+<section class="sec" id="chennai" data-sec><div class="sh"><div><h2>Chennai</h2><p>All 15 corporation zones and every locality, with the hospitals in each.</p></div><span class="pill">{len(chennai)} areas</span></div>
+<div data-grp><h3 class="sub">Greater Chennai Corporation zones</h3><div class="grid">{zones}</div></div>
+<div data-grp><h3 class="sub">High-demand pickup areas</h3><div class="grid">{hot}</div></div>
+<h3 class="sub">All Chennai areas A&ndash;Z</h3><nav class="aznav" aria-label="Jump to letter">{az_nav}</nav><div class="azwrap">{az}</div></section>
+<section class="sec" id="tamil-nadu" data-sec><div class="sh"><div><h2>Tamil Nadu</h2><p>Every district headquarters, plus Hosur and Kumbakonam &mdash; long-distance and ICU transfers to and from Chennai.</p></div><span class="pill">{len(tn)} cities</span></div>
+<div data-grp><div class="grid">{tn_cards}{extra}</div></div></section>
+<section class="sec" id="hospitals" data-sec><div class="sh"><div><h2>Major hospitals</h2><p>Regular pickups, discharges and inter-hospital transfers.</p></div><span class="pill">Hospital transfers</span></div>
+<div data-grp><div class="mgrid">{mh}</div></div></section>
+<div class="band"><div><h2>Need an ambulance now?</h2><p>One call &mdash; we confirm the ambulance type and dispatch immediately.</p></div><div class="acts"><a href="tel:{PHONE}">&#128222; Call {PHONE_DISPLAY}</a><a class="wa" href="https://wa.me/{WA}?text={quote('Hello, I need an ambulance.')}">WhatsApp</a><a href="/#booking">Book online</a></div></div>
+</main>
+<footer><div class="in"><b style="color:#fff">God Bless Ambulance Service</b><br>{esc(OFFICE)}<br>Phone: <a href="tel:{PHONE}">{PHONE_DISPLAY}</a> &middot; Open 24 hours, 7 days<br><br><a href="/">Home</a> &middot; <a href="/#booking">Book an ambulance</a> &middot; <a href="/chennai/">Chennai areas</a> &middot; <a href="/tamil-nadu/">Tamil Nadu cities</a></div></footer>
+<div class="bar"><a href="tel:{PHONE}">&#128222; Call</a><a class="wa" href="https://wa.me/{WA}">WhatsApp</a></div>
+{js}</body></html>
+"""
+    write("/locations/", page_html)
+    return home
+
+
 # ---------------------------------------------------------------- build
 def build():
     with open(os.path.join(ROOT, "index.html"), encoding="utf-8") as f:
@@ -374,6 +587,10 @@ def build():
         write(path, page(path, title, desc, body, [crumb_ld(crumbs)], crumbs, "Hello, I need an ambulance."))
         urls.append((SITE + path, "0.9"))
 
+    # ---- locations page + crisp home section
+    home_loc = build_locations(src, chennai, tn, area_url, by_area, hosp, photo_url)
+    urls.insert(1, (SITE + "/locations/", "0.9"))
+
     # ---- sitemap
     with open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8") as f:
         f.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
@@ -399,6 +616,18 @@ def build():
     src = re.sub(r'<div class="loc-chips reveal" id="tnChips">.*?</div>', '<div class="loc-chips reveal" id="tnChips">%s</div>' % tn_chips, src, count=1, flags=re.S)
     if "b.children.length" not in src:
         src = src.replace("var b=document.getElementById('tnChips');if(!b||", "var b=document.getElementById('tnChips');if(!b||b.children.length||")
+    # replace the old location sections (first run) or the previous generated block
+    if "<!--GB-LOC-->" in src:
+        src = re.sub(r"<!--GB-LOC-->.*?<!--/GB-LOC-->", lambda m: home_loc, src, count=1, flags=re.S)
+    else:
+        a, b = src.index('<section id="locations">'), src.index('<section id="hospitals">')
+        src = src[:a] + home_loc + "\n" + src[b:]
+    src = src.replace('<button type="button" class="loc-btn-solid" onclick="gbOpenAll()">View All Hospital Locations</button>',
+                      '<a class="loc-btn-solid" href="/locations/#hospitals">View All Hospital Locations</a>')
+    if 'href="/locations/">Locations</a>' not in src:
+        src = src.replace('<a href="#services">Services</a>\n', '<a href="#services">Services</a>\n<a href="/locations/">Locations</a>\n', 1)
+        src = src.replace('<a href="#services" onclick="toggleMobileNav()">Services</a>\n',
+                          '<a href="#services" onclick="toggleMobileNav()">Services</a>\n  <a href="/locations/">Locations</a>\n', 1)
     with open(os.path.join(ROOT, "index.html"), "w", encoding="utf-8") as f:
         f.write(src)
     print("area pages:", sum(len(d) for _, _, d in regions), "hospital pages:", len(hosp), "sitemap urls:", len(urls))
