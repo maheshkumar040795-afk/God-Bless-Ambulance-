@@ -401,6 +401,7 @@ footer p{font-size:13px;margin-bottom:6px;line-height:1.6;}
 .am-card:hover{border-color:#feb2b2;box-shadow:var(--shadow-hover);transform:translateY(-2px);}
 .am-ph{position:relative;height:140px;overflow:hidden;background:linear-gradient(135deg,#fff5f5,#fed7d7);}
 .am-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 0.3s;}.am-ph img.ok{opacity:1;}
+.hd-rev{display:inline-flex;align-items:center;gap:4px;padding:6px 12px;border:1.5px solid #f6c453;border-radius:20px;background:#fffbeb;color:#92400e !important;font-weight:700;font-size:12px;text-decoration:none;white-space:nowrap;}.hd-rev:hover{background:#fef3c7;}
 .gp-attr{position:absolute;right:0;bottom:0;max-width:100%;padding:2px 7px;font:10px/1.5 "Inter",sans-serif;color:#fff;background:rgba(0,0,0,0.55);border-top-left-radius:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;z-index:2;}.gp-attr a{color:#fff;text-decoration:underline;}
 
 .am-ph-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;gap:10px;color:var(--red);}
@@ -658,7 +659,7 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')gbCloseArea(
 <div class="hd-row"><span>&#128205;</span><div><b id="hdAddr2"></b><small>Address</small></div></div>
 <div class="hd-row" id="hdRateRow" hidden><span>&#11088;</span><div><b id="hdRate"></b><small>Google Rating</small></div></div>
 <div class="hd-row"><span>&#128506;</span><div><b id="hdArea"></b><small>Area</small></div></div>
-<div class="am-acts"><button type="button" id="hdDrop">Set as Drop &amp; Book</button><a id="hdDir" href="#" target="_blank" rel="noopener">Directions &rarr;</a></div></div>
+<div class="am-acts"><button type="button" id="hdDrop">Set as Drop &amp; Book</button><a id="hdRev" class="hd-rev" href="#" target="_blank" rel="noopener">&#11088; Google Reviews</a><a id="hdDir" href="#" target="_blank" rel="noopener">Directions &rarr;</a></div></div>
 <div class="am-block hd-svc"><div class="am-block-title">&#128657; God Bless Ambulance for <span id="hdName2"></span></div>
 <ul class="hd-list"><li><b>Emergency Pickup</b><small>Ambulance to and from <span class="hdN"></span>, any time</small></li><li><b>Hospital Transfer</b><small>Inter-hospital and discharge transfers</small></li><li><b>ICU Ambulance</b><small>Advanced ventilator &amp; cardiac support</small></li><li><b>24/7 Available</b><small>Day or night, always ready</small></li><li><b>Trained Staff</b><small>Experienced emergency medical crew</small></li></ul>
 <a href="tel:8939473038" class="am-btn-solid" style="display:block;margin-top:12px;">&#128222; 89394 73038</a></div>
@@ -687,7 +688,7 @@ document.getElementById('hdCrumb').textContent='Home \u203A Chennai \u203A '+are
 set('hdIntro','Need an ambulance to or from '+n+' in '+area+', Chennai? God Bless Ambulance provides 24/7 emergency ambulance, ICU ambulance and patient transfer service.');
 document.getElementById('hdPhoto').innerHTML='<div class="am-ph-ph"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/></svg><span>'+gbEsc(n)+'</span></div><img src="'+gbEsc(gbPhoto(n))+'" alt="Ambulance service near '+gbEsc(n)+', '+gbEsc(area)+'" data-n="'+gbEsc(n)+'" data-a="'+gbEsc(addr)+'" onload="this.classList.add(\'ok\')" onerror="gbGoogle(this)">';document.getElementById('hdPhoto').removeAttribute('data-gk');document.getElementById('hdRateRow').hidden=true;
 document.getElementById('hdMap').src=gbMapSrc(n+', '+addr,16);
-document.getElementById('hdDir').href='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(n+', '+addr);
+document.getElementById('hdDir').href='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(n+', '+addr);document.getElementById('hdRev').href='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(n+', '+addr);
 document.getElementById('hdWa').href='https://wa.me/918939473038?text='+encodeURIComponent('Hello, I need an ambulance to/from '+n+', '+area+'.');
 document.getElementById('hdDrop').onclick=function(){gbCloseHosp();gbFillLocation('drop','ddrop',n+', '+addr);};
 document.getElementById('hdBack').onclick=function(){gbOpenArea(area);};
