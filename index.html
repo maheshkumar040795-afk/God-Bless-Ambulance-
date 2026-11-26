@@ -585,7 +585,7 @@ function gbFillLocation(id,dd,val){var el=document.getElementById(id);if(!el)ret
 <div id="areaModal" class="am-overlay" onclick="if(event.target===this)gbCloseArea()" aria-hidden="true">
 <div class="am-box" role="dialog" aria-modal="true" aria-labelledby="amTitle">
 <div class="am-head">
-<div><span class="am-eyebrow">24/7 Ambulance Service</span><h3>Ambulance Service in <span id="amTitle">Area</span></h3><p id="amCount"></p><a id="amPage" href="/chennai/" style="color:#fff;font-size:13px;font-weight:700;text-decoration:underline">Open full page with all hospitals &rarr;</a></div>
+<div><span class="am-eyebrow">24/7 Ambulance Service</span><h3>Ambulance Service in <span id="amTitle">Area</span></h3><p id="amCount"></p></div>
 <button type="button" class="am-close" onclick="gbCloseArea()" aria-label="Close">&times;</button>
 </div>
 <div class="am-scroll" id="amScroll">
@@ -595,7 +595,7 @@ function gbFillLocation(id,dd,val){var el=document.getElementById(id);if(!el)ret
 <div class="am-grid" id="amList"></div></div>
 </div>
 <div class="am-foot">
-<button type="button" class="am-btn-solid" id="amPickupBtn">Book Pickup from <span id="amAreaName"></span></button>
+<a class="am-btn-solid" id="amPage" href="/chennai/">Open full page with all hospitals &rarr;</a>
 <a href="tel:8939473038" class="am-btn-outline">&#128222; Call 89394 73038</a>
 </div>
 </div>
@@ -647,10 +647,10 @@ h+='<div class="am-card"><div class="am-ph" onclick="gbHospFromArea('+i+')">'+ph
 document.getElementById('amList').innerHTML=h||'<p class="am-empty">No hospitals match your search. Call us &mdash; we cover all hospitals in and around '+gbEsc(gbCurArea)+'.</p>';}
 function gbShowHosp(i){var x=gbList(gbCurArea)[i];if(!x)return;gbSetMap(x[0]+', '+x[1],x[0],16);document.getElementById('amScroll').scrollTo({top:0,behavior:'smooth'});}
 function gbOpenArea(a){gbCloseAll();gbCloseHosp();gbCurArea=a;var n=gbList(a).length;
-['amTitle','amTitle2','amAreaName'].forEach(function(id){document.getElementById(id).textContent=a;});
+['amTitle','amTitle2'].forEach(function(id){document.getElementById(id).textContent=a;});
 var rg=gbRegion(a);document.getElementById('amCount').textContent='Emergency, ICU & hospital transfer ambulances in '+a+', '+rg+(n?' \u2014 '+n+' hospitals covered nearby.':' \u2014 we cover all hospitals in and around '+a+'.');
 document.getElementById('amPage').href='/'+(GB_TN_CITIES[a]?'tamil-nadu':'chennai')+'/'+a.toLowerCase().replace(/&/g,' and ').replace(/['\u2019]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'')+'/';document.getElementById('amSearch').value='';gbRenderArea('');gbSetMap(a+(rg==='Chennai'?', Chennai':'')+', Tamil Nadu',a+' Location Map',rg==='Chennai'?14:13);
-document.getElementById('amPickupBtn').onclick=function(){gbCloseArea();gbFillLocation('pickup','pdrop',a+', '+rg);};
+
 gbShow('areaModal');document.getElementById('amScroll').scrollTop=0;}
 function gbCloseArea(){gbHide('areaModal');}
 function gbAreaDrop(i){var x=gbList(gbCurArea)[i];if(!x)return;gbCloseArea();gbFillLocation('drop','ddrop',x[0]+', '+x[1]);}
