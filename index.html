@@ -402,7 +402,7 @@ footer p{font-size:13px;margin-bottom:6px;line-height:1.6;}
 .am-ph{position:relative;height:140px;overflow:hidden;background:linear-gradient(135deg,#fff5f5,#fed7d7);}
 .am-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;opacity:0;transition:opacity 0.3s;}.am-ph img.ok{opacity:1;}
 .hd-rev{display:inline-flex;align-items:center;gap:4px;padding:6px 12px;border:1.5px solid #f6c453;border-radius:20px;background:#fffbeb;color:#92400e !important;font-weight:700;font-size:12px;text-decoration:none;white-space:nowrap;}.hd-rev:hover{background:#fef3c7;}
-.gp-attr{position:absolute;right:0;bottom:0;max-width:100%;padding:2px 7px;font:10px/1.5 "Inter",sans-serif;color:#fff;background:rgba(0,0,0,0.55);border-top-left-radius:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;z-index:2;}.gp-attr a{color:#fff;text-decoration:underline;}
+.gp-attr{position:absolute;right:0;bottom:0;max-width:100%;padding:2px 7px;font:10px/1.5 "Inter",sans-serif;color:#fff;background:rgba(0,0,0,0.55);border-top-left-radius:6px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;z-index:2;}.gp-attr a{color:#fff;text-decoration:underline;}.am-ph .gp-attr{max-width:48%;}@media(max-width:600px){.am-ph .gp-attr{font-size:9px;padding:1px 5px;}}
 
 .am-ph-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;gap:10px;color:var(--red);}
 .am-ph-ph svg{width:40px;height:40px;fill:var(--red);opacity:0.9;}
@@ -605,19 +605,19 @@ function gbMapSrc(q,z){return 'https://maps.google.com/maps?q='+encodeURICompone
 function gbSetMap(q,label,z){document.getElementById('amMap').src=gbMapSrc(q,z);document.getElementById('amMapTitle').textContent=label;}
 function gbPhoto(n){return GB_PHOTOS[n]||('hospital-images/'+gbSlug(n.replace(/,\s*(Greams Road|Manapakkam|Aminjikarai|Alwarpet|Adyar|Perumbakkam|Porur|Vadapalani)$/,''))+'.jpg');}
 var gbListCache={};
-/* Google hospital photo + rating in the hospital DETAIL popup only (2 Google requests per popup; cards never call Google, to stay inside the free monthly usage). Paste a Google Maps API key below, with "Places API (New)" enabled and restricted to https://godblessambulance.in/*. Empty = only photos from hospital-images/. A photo in hospital-images/ always wins over Google. */
+/* Live Google hospital photo on every hospital card and in the detail popup (shown live, never stored; 2 Google requests per hospital shown, reused for the visitor's browser session). Set daily quotas in Google Cloud to stay inside the free monthly usage. Paste a Google Maps API key below, with "Places API (New)" enabled and restricted to https://godblessambulance.in/*. Empty = only photos from hospital-images/. A photo in hospital-images/ always wins over Google. */
 var GB_PLACES_KEY='';
 var gbPlaceMem={};
 function gbPlace(n,a){var k=n+'|'+a;if(gbPlaceMem[k])return gbPlaceMem[k];var ss=null;try{ss=sessionStorage.getItem('gp:'+k);}catch(e){}
 if(ss){gbPlaceMem[k]=Promise.resolve(JSON.parse(ss));return gbPlaceMem[k];}
-gbPlaceMem[k]=fetch('https://places.googleapis.com/v1/places:searchText',{method:'POST',headers:{'Content-Type':'application/json','X-Goog-Api-Key':GB_PLACES_KEY,'X-Goog-FieldMask':'places.rating,places.userRatingCount,places.photos'},body:JSON.stringify({textQuery:n+', '+a,pageSize:1,languageCode:'en',regionCode:'IN'})})
-.then(function(r){return r.ok?r.json():{};}).then(function(d){var p=(d.places||[])[0];var o=p?{r:p.rating||0,c:p.userRatingCount||0,ph:(p.photos&&p.photos[0])?{n:p.photos[0].name,a:(p.photos[0].authorAttributions||[]).map(function(x){return{n:x.displayName||'',u:x.uri||''};})}:null}:null;
+gbPlaceMem[k]=fetch('https://places.googleapis.com/v1/places:searchText',{method:'POST',headers:{'Content-Type':'application/json','X-Goog-Api-Key':GB_PLACES_KEY,'X-Goog-FieldMask':'places.photos'},body:JSON.stringify({textQuery:n+', '+a,pageSize:1,languageCode:'en',regionCode:'IN'})})
+.then(function(r){return r.ok?r.json():{};}).then(function(d){var p=(d.places||[])[0];var o=p?{ph:(p.photos&&p.photos[0])?{n:p.photos[0].name,a:(p.photos[0].authorAttributions||[]).map(function(x){return{n:x.displayName||'',u:x.uri||''};})}:null}:null;
 try{sessionStorage.setItem('gp:'+k,JSON.stringify(o));}catch(e){}return o;}).catch(function(){return null;});return gbPlaceMem[k];}
 function gbGoogle(img){var box=img.parentNode,n=img.getAttribute('data-n'),a=img.getAttribute('data-a')||'';img.remove();if(!GB_PLACES_KEY||!n||!box)return;
 box.setAttribute('data-gk',n);gbPlace(n,a).then(function(p){if(!p||box.getAttribute('data-gk')!==n)return;
-if(p.r){document.getElementById('hdRate').textContent=p.r.toFixed(1)+' / 5'+(p.c?' ('+p.c.toLocaleString('en-IN')+' reviews)':'');document.getElementById('hdRateRow').hidden=false;}
+
 if(!p.ph)return;var im=document.createElement('img');im.alt=n;im.loading='lazy';im.onload=function(){im.classList.add('ok');};im.onerror=function(){im.remove();var c=box.querySelector('.gp-attr');if(c)c.remove();};
-im.src='https://places.googleapis.com/v1/'+p.ph.n+'/media?maxWidthPx=1000&key='+encodeURIComponent(GB_PLACES_KEY);box.appendChild(im);
+im.src='https://places.googleapis.com/v1/'+p.ph.n+'/media?maxWidthPx='+(box.closest('.am-card')?480:1000)+'&key='+encodeURIComponent(GB_PLACES_KEY);box.appendChild(im);
 var at=document.createElement('div');at.className='gp-attr';at.innerHTML=(p.ph.a.length?'Photo: '+p.ph.a.map(function(x){return x.u?'<a href="'+gbEsc(x.u)+'" target="_blank" rel="noopener">'+gbEsc(x.n)+'</a>':gbEsc(x.n);}).join(', ')+' &middot; ':'')+'Google Maps';at.onclick=function(e){e.stopPropagation();};box.appendChild(at);});}
 
 function gbList(a){if(gbListCache[a])return gbListCache[a];var k=GB_AREA_ALIAS[a.toLowerCase()]||a;if(GB_AREA_HOSPITALS[k]){gbListCache[a]=GB_AREA_HOSPITALS[k];return gbListCache[a];}
@@ -626,7 +626,7 @@ gbListCache[a]=out.slice(0,24);return gbListCache[a];}
 function gbRenderArea(q){var list=gbList(gbCurArea);q=(q||'').toLowerCase().trim();var h='';
 list.forEach(function(x,i){if(q&&(x[0]+' '+x[1]).toLowerCase().indexOf(q)<0)return;
 var maps='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(x[0]+', '+x[1]);
-var src=gbPhoto(x[0]);var ph='<div class="am-ph-ph"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/></svg><span>'+gbInit(x[0])+'</span></div><img src="'+gbEsc(src)+'" alt="'+gbEsc(x[0])+', '+gbEsc(gbCurArea)+'" loading="lazy" onload="this.classList.add(\'ok\')" onerror="this.remove()">';
+var src=gbPhoto(x[0]);var ph='<div class="am-ph-ph"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/></svg><span>'+gbInit(x[0])+'</span></div><img src="'+gbEsc(src)+'" alt="'+gbEsc(x[0])+', '+gbEsc(gbCurArea)+'" loading="lazy" data-n="'+gbEsc(x[0])+'" data-a="'+gbEsc(x[1])+'" onload="this.classList.add(\'ok\')" onerror="gbGoogle(this)">';
 h+='<div class="am-card"><div class="am-ph" onclick="gbHospFromArea('+i+')">'+ph+'<span class="am-badge">&#128657; Ambulance Available</span></div><div class="am-cbody"><strong class="am-link" onclick="gbHospFromArea('+i+')">'+gbEsc(x[0])+'</strong><small>'+gbEsc(x[1])+'</small><div class="am-acts"><button type="button" onclick="gbAreaDrop('+i+')">Set as Drop</button><button type="button" class="am-ghost" onclick="gbShowHosp('+i+')">Show on Map</button><a href="'+maps+'" target="_blank" rel="noopener">Directions &rarr;</a></div></div></div>';});
 document.getElementById('amList').innerHTML=h||'<p class="am-empty">No hospitals match your search. Call us &mdash; we cover all hospitals in and around '+gbEsc(gbCurArea)+'.</p>';}
 function gbShowHosp(i){var x=gbList(gbCurArea)[i];if(!x)return;gbSetMap(x[0]+', '+x[1],x[0],16);document.getElementById('amScroll').scrollTo({top:0,behavior:'smooth'});}
@@ -657,7 +657,6 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape')gbCloseArea(
 <div class="am-block"><div class="am-block-title">Hospital Details</div>
 <div class="hd-row"><span>&#127973;</span><div><b id="hdName"></b><small>Hospital Name</small></div></div>
 <div class="hd-row"><span>&#128205;</span><div><b id="hdAddr2"></b><small>Address</small></div></div>
-<div class="hd-row" id="hdRateRow" hidden><span>&#11088;</span><div><b id="hdRate"></b><small>Google Rating</small></div></div>
 <div class="hd-row"><span>&#128506;</span><div><b id="hdArea"></b><small>Area</small></div></div>
 <div class="am-acts"><button type="button" id="hdDrop">Set as Drop &amp; Book</button><a id="hdRev" class="hd-rev" href="#" target="_blank" rel="noopener">&#11088; Google Reviews</a><a id="hdDir" href="#" target="_blank" rel="noopener">Directions &rarr;</a></div></div>
 <div class="am-block hd-svc"><div class="am-block-title">&#128657; God Bless Ambulance for <span id="hdName2"></span></div>
@@ -686,7 +685,7 @@ set('hdTitle',n);set('hdName',n);set('hdName2',n);set('hdAddr',addr);set('hdAddr
 document.querySelectorAll('#hospModal .hdN').forEach(function(e){e.textContent=n;});
 document.getElementById('hdCrumb').textContent='Home \u203A Chennai \u203A '+area+' \u203A '+n;
 set('hdIntro','Need an ambulance to or from '+n+' in '+area+', Chennai? God Bless Ambulance provides 24/7 emergency ambulance, ICU ambulance and patient transfer service.');
-document.getElementById('hdPhoto').innerHTML='<div class="am-ph-ph"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/></svg><span>'+gbEsc(n)+'</span></div><img src="'+gbEsc(gbPhoto(n))+'" alt="Ambulance service near '+gbEsc(n)+', '+gbEsc(area)+'" data-n="'+gbEsc(n)+'" data-a="'+gbEsc(addr)+'" onload="this.classList.add(\'ok\')" onerror="gbGoogle(this)">';document.getElementById('hdPhoto').removeAttribute('data-gk');document.getElementById('hdRateRow').hidden=true;
+document.getElementById('hdPhoto').innerHTML='<div class="am-ph-ph"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/></svg><span>'+gbEsc(n)+'</span></div><img src="'+gbEsc(gbPhoto(n))+'" alt="Ambulance service near '+gbEsc(n)+', '+gbEsc(area)+'" data-n="'+gbEsc(n)+'" data-a="'+gbEsc(addr)+'" onload="this.classList.add(\'ok\')" onerror="gbGoogle(this)">';document.getElementById('hdPhoto').removeAttribute('data-gk');
 document.getElementById('hdMap').src=gbMapSrc(n+', '+addr,16);
 document.getElementById('hdDir').href='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(n+', '+addr);document.getElementById('hdRev').href='https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(n+', '+addr);
 document.getElementById('hdWa').href='https://wa.me/918939473038?text='+encodeURIComponent('Hello, I need an ambulance to/from '+n+', '+area+'.');
