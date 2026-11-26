@@ -150,7 +150,7 @@ def page(path, title, desc, body, ld, crumbs, wa_text):
 </main>
 <footer><div class="in"><b>God Bless Ambulance Service</b><br>{esc(OFFICE)}<br>
 Phone: <a href="tel:{PHONE}">{PHONE_DISPLAY}</a> &middot; Open 24 hours, 7 days<br><br>
-<a href="/">Home</a> &middot; <a href="/#booking">Book an ambulance</a> &middot; <a href="/chennai/">Chennai areas</a> &middot; <a href="/tamil-nadu/">Tamil Nadu cities</a><br><br><span style="opacity:.75">Designed &amp; developed by <a href="https://thinkthroughtechnology.in" target="_blank" rel="noopener">Think Through Technology</a> &middot; <a href="https://thinkthroughtechnology.in" target="_blank" rel="noopener">thinkthroughtechnology.in</a></span></div></footer>
+<a href="/">Home</a> &middot; <a href="/#booking">Book an ambulance</a> &middot; <a href="/chennai/">Chennai areas</a> &middot; <a href="/tamil-nadu/">Tamil Nadu cities</a><br><br><span style="opacity:.75">Developed by <a href="https://thinkthroughtechnology.in" target="_blank" rel="noopener">Think Through Technology</a> &middot; <a href="https://thinkthroughtechnology.in" target="_blank" rel="noopener">thinkthroughtechnology.in</a></span></div></footer>
 <div class="bar"><a class="btn red" href="tel:{PHONE}">&#128222; Call</a><a class="btn green" href="{esc(wa)}">WhatsApp</a></div>
 {MAP_JS}
 </body></html>
@@ -406,7 +406,7 @@ grps.forEach(function(g){g.classList.toggle('hide',!!q&&!g.querySelector('[data-
 <div data-grp><div class="mgrid">{mh}</div></div></section>
 <div class="band"><div><h2>Need an ambulance now?</h2><p>One call &mdash; we confirm the ambulance type and dispatch immediately.</p></div><div class="acts"><a href="tel:{PHONE}">&#128222; Call {PHONE_DISPLAY}</a><a class="wa" href="https://wa.me/{WA}?text={quote('Hello, I need an ambulance.')}">WhatsApp</a><a href="/#booking">Book online</a></div></div>
 </main>
-<footer><div class="in"><b style="color:#fff">God Bless Ambulance Service</b><br>{esc(OFFICE)}<br>Phone: <a href="tel:{PHONE}">{PHONE_DISPLAY}</a> &middot; Open 24 hours, 7 days<br><br><a href="/">Home</a> &middot; <a href="/#booking">Book an ambulance</a> &middot; <a href="/chennai/">Chennai areas</a> &middot; <a href="/tamil-nadu/">Tamil Nadu cities</a><br><br><span style="opacity:.75">Designed &amp; developed by <a href="https://thinkthroughtechnology.in" target="_blank" rel="noopener">Think Through Technology</a> &middot; <a href="https://thinkthroughtechnology.in" target="_blank" rel="noopener">thinkthroughtechnology.in</a></span></div></footer>
+<footer><div class="in"><b style="color:#fff">God Bless Ambulance Service</b><br>{esc(OFFICE)}<br>Phone: <a href="tel:{PHONE}">{PHONE_DISPLAY}</a> &middot; Open 24 hours, 7 days<br><br><a href="/">Home</a> &middot; <a href="/#booking">Book an ambulance</a> &middot; <a href="/chennai/">Chennai areas</a> &middot; <a href="/tamil-nadu/">Tamil Nadu cities</a><br><br><span style="opacity:.75">Developed by <a href="https://thinkthroughtechnology.in" target="_blank" rel="noopener">Think Through Technology</a> &middot; <a href="https://thinkthroughtechnology.in" target="_blank" rel="noopener">thinkthroughtechnology.in</a></span></div></footer>
 <div class="bar"><a href="tel:{PHONE}">&#128222; Call</a><a class="wa" href="https://wa.me/{WA}">WhatsApp</a></div>
 {js}</body></html>
 """
